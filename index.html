@@ -17,11 +17,37 @@
           console.log("made prediction")
           var finalProbs = result.slice([0,4]).reshape([-1])
           console.log(finalProbs.shape)
+          var result = finalProbs.argMax()  // or tf.argMax(x)
+          var maxpr = document.getElementById("maxprob"); 
+          console.log(maxpr.innerHTML)
+          maxpr.innerHTML = result 
+          //////////////////
+          //document.getElementById("imrec").style.visibility = "visible"
+          
+          
+          //var recim = document.getElementById("imrec")//.style.visibility = "visible"; 
+          var recim = document.getElementById('imrec');
+          //recim.innerHTML = 'blue_boots.jpg'
+          /*const element = document.getElementById("imrec");
+          if (element.hasAttribute("hidden")) {
+          element.setAttribute("hidden", "src='blue_boots.jpg'");
+          }
+          */
+          if (recim.style.visibility === 'hidden') {
+          recim.style.visibility = 'visible';
+          } else {
+          recim.style.visibility = 'hidden';
+          }
+          
+
+          //img = loadImage('w6web/blue_boots.jpg') 
         })
         /////////////////////////////////
-      })
+      })}
     </script>
   </head>
+  <p id = 'maxprob'> hello world!</p>
+  </image>
+  <button type="button" onclick="predict()">Click Me for the prediction!</button> 
+  
 </html>
-University of the Arts London
-University of the Arts London
